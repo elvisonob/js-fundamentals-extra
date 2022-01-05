@@ -7,6 +7,10 @@
 // with a reference to your function.
 //
 // TODO: write code below
+function SecondsInHours(hours) {
+    return hours * 3600
+
+}
 
 
 
@@ -22,6 +26,11 @@
 // with a reference to your function.
 //
 // TODO: write code below
+function MilesTravelled(speed, minutes) {
+    const hoursTravelled = minutes / 60
+    return Math.ceil(speed * hoursTravelled)
+
+}
 
 
 
@@ -36,6 +45,10 @@
 // with a reference to your function.
 //
 // TODO: write code below
+function KilometersToMiles(kilometerNumber) {
+    let mileDistance = kilometerNumber / 1.6
+    return Math.round(mileDistance)
+}
 
 
 
@@ -52,6 +65,15 @@
 // with a reference to your function.
 //
 // TODO: write code below
+function MakeSentence(string) {
+    let stringFirstCapitalize = string.charAt(0).toUpperCase()
+    let lastcharacter = string.charAt(string.length - 1)
+    if (lastcharacter !== '.' && lastcharacter !== '?' && lastcharacter !== '!') {
+        return stringFirstCapitalize + string.substring(1) + '.'
+    } else
+
+        return stringFirstCapitalize + string.substring(1)
+}
 
 
 
@@ -66,6 +88,15 @@
 // with a reference to your function.
 //
 // TODO: write code below
+function FileExtension(string) {
+    let lastIndex = string.lastIndexOf(".")
+    let extension = string.substring(lastIndex + 1)
+    if (lastIndex < 0) {
+        return ''
+    } else {
+        return extension
+    }
+}
 
 
 
@@ -79,8 +110,12 @@
 // with a reference to your function.
 //
 // TODO: write code below
-
-
+function Range(numbers) {
+    let highestNumber = Math.max(...numbers)
+    let lowestNumber = Math.min(...numbers)
+    let difference = highestNumber - lowestNumber
+    return difference
+}
 
 // CheckTransactions
 //
@@ -98,6 +133,12 @@
 // with a reference to your function.
 //
 // TODO: write code below
+//first argument is an array containing list of transactions
+//positive numbers deposits, negative numbers withdrawals
+//second argument is account starting balance and third argyment is account overdraft.
+//return false if applying list of transactions causes account balance to go below overdraft value
+function checkTransactions(first, second, third) {}
+
 
 
 
@@ -118,27 +159,27 @@
 
 // TODO: change undefined to be the name of the functions you defined
 module.exports = {
-  //SecondsInHours
-  a: undefined,
+    //SecondsInHours
+    a: SecondsInHours,
 
-  //MilesTravelled,
-  b: undefined,  
+    //MilesTravelled,
+    b: MilesTravelled,
 
-  //KilometersToMiles,
-  c: undefined, 
+    //KilometersToMiles,
+    c: KilometersToMiles,
 
-  //MakeSentence
-  d: undefined, 
+    //MakeSentence
+    d: MakeSentence,
 
-  //FileExtension
-  e: undefined,
+    //FileExtension
+    e: FileExtension,
 
-  //Range
-  f: undefined,
+    //Range
+    f: Range,
 
-  //CheckTransactions
-  g: undefined,
+    //CheckTransactions
+    g: checkTransactions,
 
-  //FilmsInGenre
-  h: undefined,
+    //FilmsInGenre
+    h: undefined,
 }
