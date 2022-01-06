@@ -133,13 +133,16 @@ function Range(numbers) {
 // with a reference to your function.
 //
 // TODO: write code below
-//first argument is an array containing list of transactions
-//positive numbers deposits, negative numbers withdrawals
-//second argument is account starting balance and third argyment is account overdraft.
-//return false if applying list of transactions causes account balance to go below overdraft value
-function checkTransactions(first, second, third) {}
+function checkTransactions(transactions, balance, overdraft) {
+    for (let i = 0; i < transactions.length; i++) {
+        let transaction = transactions[i]
+        balance = balance + transaction
 
-
+        if (balance < -overdraft)
+            return false
+    }
+    return true
+}
 
 
 // FilmsInGenre
@@ -154,6 +157,18 @@ function checkTransactions(first, second, third) {}
 // with a reference to your function.
 //
 // TODO: write code below
+function filmsInGenre(film, genre) {
+    let filmname = []
+    for (let i = 0; i < film.length; i++) {
+        let films = film[i]
+        if (films.genres.includes(genre)) {
+            filmname.push(films.name)
+        }
+
+    }
+    return filmname
+
+}
 
 
 
@@ -181,5 +196,5 @@ module.exports = {
     g: checkTransactions,
 
     //FilmsInGenre
-    h: undefined,
+    h: filmsInGenre,
 }
